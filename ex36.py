@@ -30,7 +30,6 @@ def makeTransProb_and_Rewards(
     reward: np.ndarray = np.zeros(
         (nStates, nActions))              # 2D Array of floats
 
-    # ex34.py specifies allowedActions dtype should be bool
     allowedActions: np.ndarray = np.zeros((nStates, nActions), dtype=bool)
 
     for s in range(nStates):
@@ -72,7 +71,7 @@ if __name__ == '__main__':
         (nStates, nActions))  # 2D Array of floats
     probActions[:, 5] = 1.0  # Index 5 is action 0 (no cars moved)
 
-    # Initialize value function for ex34.py inputs
+    # Initialize value function
     v: np.ndarray = np.zeros(nStates)  # 1D Array of floats
 
     policies: List[np.ndarray] = []
@@ -144,11 +143,11 @@ if __name__ == '__main__':
 
                 ax.text(x, y, text_str, ha='center', va='center', fontsize=6)
 
-    # 2. Plot the final state-value function (v_pi_4) as a 3D surface[cite: 129]
+    # 2. Plot the final state-value function (v_pi_4) as a 3D surface
     ax_v = fig.add_subplot(2, 3, 6, projection='3d')
 
     # Create a meshgrid for the 21x21 state space
-    # X represents the second location, Y represents the first location[cite: 129]
+    # X represents the second location, Y represents the first location
     X, Y = np.meshgrid(range(21), range(21))
     Z: np.ndarray = v.reshape((21, 21))
 

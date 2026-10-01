@@ -4,7 +4,7 @@ from scipy.stats import poisson
 
 def oneTransProb(lamRequest: float, lamReturn: float) -> np.ndarray:  # Returns 2D Array of floats
     n1States: int = 21
-    # 2D Array of floats (transition probabilities)[cite: 13]
+    # 2D Array of floats (transition probabilities)
     p: np.ndarray = np.zeros((n1States, n1States))
 
     for k0 in range(n1States):
